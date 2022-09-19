@@ -1,6 +1,5 @@
 const inputText = document.querySelector('.input');
 const button = document.querySelector('.send-btn');
-
 const comments = [];
 
 function handler() {
