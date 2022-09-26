@@ -2,17 +2,13 @@ const inputText = document.querySelector('.input');
 const button = document.querySelector('.send-btn');
 const comments = [];
 
+const checkSpam = () => inputText.value.replace(/viagra|xxx/gi, '***');
+
 function handler() {
 
     if (inputText.value !== '') {
 
-        function checkSpam() {
-            return inputText.value.replace(/viagra|xxx/gi, '***');
-        }
-
-        const checkedText = checkSpam();
-
-        comments.push(checkedText);
+        comments.push(checkSpam());
         console.log(comments);
 
         let newComment = '';
@@ -22,7 +18,7 @@ function handler() {
             document.querySelector('.output').innerHTML = newComment;
         }
 
-        inputText.value = '';
+        inputText.value = ''; //очищаем текстовое поле после отправки комментария
     }
 }
 
